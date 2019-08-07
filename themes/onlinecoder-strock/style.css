@@ -1,0 +1,192 @@
+/*!
+Theme Name: Strock
+Theme URI: http://underscores.me/
+Author: Online Coder
+Author URI: http://underscores.me/
+Description: This Is a Strock Psd to wp development
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: onlinecoder-strock
+Tags: 
+*/
+@import url('https://fonts.googleapis.com/css?family=Noto+Serif:400,400i,700,700i|Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap');
+
+body{
+  font-size: 16px;
+  font-family: 'Noto Serif', serif;
+}
+
+h1, h2, h3, h4, h5, h6{
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  color: #333333;
+  font-weight: 700;
+}
+/*------------------------------------------
+Header Area
+-------------------------------------------*/
+.site-logo {
+	position: relative;
+	top: 25px;
+}
+.site-logo a {
+  color: #333;
+  font-size: 30px;
+  font-weight: 700;
+  text-decoration: none;
+}
+.header-right-content {
+  display: flex;
+}
+
+.stock-content-box {
+  font-size: 15px;
+  color: #666;
+  margin-right: 75px;
+}
+.stock-content-box i {
+  color: #1E8BC3;
+  width: 50px;
+  height: 50px;
+  padding: 15px;
+  border: 1px solid #D9E4EA;
+  border-radius: 50%;
+  font-size: 18px;
+  position: relative;
+  top: 16px;
+  right: 10px;
+}
+.stock-content-box h3 {
+  position: relative;
+  left: 54px;
+  top: -10px;
+}
+a.stock-content-box {
+  text-decoration: none;
+}
+
+.stock-cart {
+  width: 50px;
+  height: 50px;
+  border: 1px solid #D9E4EA;
+  border-radius: 50px;
+  line-height: 15px;
+  padding: 15px;
+  position: relative;
+  top: 17px;
+}
+.stock-cart span {
+  position: absolute;
+  background: #1E8BC3;
+  color: #fff;
+  width: 30px;
+  height: 30px;
+  border-radius: 50px;
+  padding: 10px;
+  line-height: 10px;
+  font-size: 14px;
+  font-family: 'Roboto', sans-serif;
+  top: -5px;
+  right: -15px;
+}
+.mainmenu {
+  border-top: 1px solid #D9E4EA;
+  margin-top: 15px;
+}
+.mainmenu ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.mainmenu ul li{
+  position: relative;
+  display: inline-block;
+}
+.mainmenu ul li a {
+  color: #333;
+  font-weight: 700;
+  padding: 20px;
+  padding-left: 0;
+  display: inline-block;
+  text-decoration: none;
+}
+/*--------------------------------------
+Footer Area
+---------------------------------------*/
+.site-footer {
+  background: #2A2D2F;
+}
+.widget_nav_menu h4 {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.footer-menu ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.footer-menu ul li a {
+  color: #AFB9C0;
+  line-height: 34px;
+  font-family: 'Roboto', sans-serif;
+  text-decoration: none;
+}
+.widget_nav_menu {
+  padding-top: 90px;
+  padding-bottom: 70px;
+}
+.stock-footer-bottom {
+  border-top: 1px solid #707070;
+  color: #AFB9C0;
+  padding: 30px 0;
+  font-size: 15px;
+  font-family: 'Roboto', sans-serif;
+}
+.stock-footer-bottom .menu ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.stock-footer-bottom .menu ul li {
+  display: inline-block;
+}
+.stock-footer-bottom .menu ul li a {
+  color: #AFB9C0;
+}
+
+.stock-footer-bottom ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.stock-footer-bottom ul li {
+  display: inline-block;
+  position: relative;
+  padding: 0 25px;
+}
+.stock-footer-bottom ul li a {
+  text-decoration: none;
+  color: #AFB9C0;
+}
+.menu-footer-container {
+  text-align: center;
+}
+.stock-footer-bottom ul li.menu-item-11::after {
+  position: absolute;
+  content: '';
+  width: 2px;
+  height: 15px;
+  background: #AFB9C0;
+  right: 0;
+  top: 5px;
+}
+.social-icon {
+  text-align: right;
+}
+.social-icon a {
+  color: #fff;
+  padding-left: 15px;
+}
