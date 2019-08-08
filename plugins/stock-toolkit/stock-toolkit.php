@@ -59,7 +59,7 @@ if( is_plugin_active( 'js_composer/js_composer.php' )){
 
 // Registering Stock Tolkit File
 function stock_tolkit_files(){
-   wp_enqueue_style('owl-carousel', plugin_dir_path( __FILE__ ) .'assets/css/owl-carousel.css');
-   wp_enqueue_script('owl-carousel', plugin_dir_path( __FILE__ ) .'assets/css/owl-carousel.min.js', array('jquery'), '2.34', true);
+   wp_enqueue_style('owl-carousel', plugin_dir_url( __FILE__ ) .'assets/css/owl.carousel.min.css');
+   wp_enqueue_script('owl-carousel', plugin_dir_url( __FILE__ ) .'assets/js/owl.carousel.min.js', array('jquery'), '2.3.4', true);
 }
 add_action('wp_enqueue_scripts','stock_tolkit_files');

@@ -23,7 +23,6 @@ if( class_exists( 'CSF' ) ) {
          array(
             'id'                 => 'button',
             'type'               => 'group',
-            'title'              => esc_html__('Slider Button', 'stock'),
             'accourdion_title'   => esc_html__('Add New Button', 'stock'),
             'fields'    => array(
                array(
@@ -99,7 +98,6 @@ if( class_exists( 'CSF' ) ) {
          ),
   
       )
-    ) );
- 
- 
- }
+   ) );
+
+}

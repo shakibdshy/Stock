@@ -13,34 +13,23 @@ function stock_slides_shortcode($atts){
         
    $list = '
    <script>
-       jQuery(document).ready(fucntion($){
-          $(.slider-active).owlCarousel({
+      jQuery(document).ready(function($){
+         $(".slider-active").owlCarousel({
             loop: true,
-            autoplay: false,
+            items:1,
             nav:true,
             dots: true,
-            navText: ["<i class=\'fas fa-angle-left\'></i>","<i class=\'fas fa-angle-right\'></i>"],
-            responsive:{
-                0:{
-                    items:1
-                },
-                600:{
-                    items:3
-                },
-                1000:{
-                    items:5
-                }
-            }
-          })
-       });
+            navText: ["<i class=\'fas fa-angle-left\'></i>", "<i class=\'fas fa-angle-right\'></i>"]
+        });
+      });
    </script>
-   <div class="slider-active">';
+   <div class="slider-active owl-carousel">';
       while($q->have_posts()) : $q->the_post();
          $idd = get_the_ID();
          $slide_meta = get_post_meta($idd, 'stock_slides_options', true);
          $post_content = get_the_content();
          $list .= '
-         <div style="background: url('.get_the_post_thumbnail($idd, 'large').');" class="stock_slide_item">
+         <div style="background-image: url('.get_the_post_thumbnail_url($idd, 'large').')" class="stock_slide_item">
             <div class="stock_slide_table">
                <div class="stock_slide_tablecell">
                   <div class="container">
@@ -48,13 +37,13 @@ function stock_slides_shortcode($atts){
                         <div class="col-xl-6">
                            <h2>'.get_the_title($idd).'</h2>
                            '.wpautop($post_content).'';
-                           if(!emty($slide_meta['button'])){
+                           if(!empty($slide_meta['button'])){
                               $list .='<div class="stock_slides_buttons">';
                                  foreach ($slide_meta['button'] as $button) {
                                     if($button['link_type'] == 1){
                                        $btn_link = get_page_link($button['link_to_page']);
                                     }else {
-                                       $btn_link = $button['link_to_page'];
+                                       $btn_link = $button['link_to_external'];
                                     }
                                     $list .='<a href="'.$btn_link.'" class="'.$button['type'].'-btn stock_slide_btn"></a>';
                                  }
