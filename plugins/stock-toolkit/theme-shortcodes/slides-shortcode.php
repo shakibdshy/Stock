@@ -13,8 +13,8 @@ function stock_slides_shortcode($atts){
         
    $list = '
    <script>
-      jQuery(document).ready(function($){
-         $(".slider-active").owlCarousel({
+      jQuery(window).load(function($){
+         jQuery(".slider-active").owlCarousel({
             loop: true,
             items:1,
             nav:true,
@@ -45,7 +45,7 @@ function stock_slides_shortcode($atts){
                                     }else {
                                        $btn_link = $button['link_to_external'];
                                     }
-                                    $list .='<a href="'.$btn_link.'" class="'.$button['type'].'-btn stock_slide_btn"></a>';
+                                    $list .='<a href="'.$btn_link.'" class="'.$button['type'].'-btn stock_slide_btn">'.$button['text'].'</a>';
                                  }
                               $list .='</div>';
                            }
