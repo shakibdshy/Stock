@@ -2,6 +2,8 @@
 function stock_slides_shortcode($atts){
    extract( shortcode_atts( array(
        'count'             => 5,
+       'slider_id'         => '',
+       'height'            => '730',
        'loop'              => 'true',
        'autoplay'          => 'true',
        'autoplayTimeout'   => 5000,
@@ -9,28 +11,45 @@ function stock_slides_shortcode($atts){
        'dots'              => 'true',
    ), $atts) );
     
-   $q = new WP_Query(
-      array(
-         'posts_per_page' => $count, 
-         'post_type'      => 'slides',
-      )
-   );
-        
-   $list = '
-   <script>
-      jQuery(window).load(function($){
-         jQuery(".slider-active").owlCarousel({
-            loop           : '.$loop.',
-            items          : 1,
-            autoplay       : '.$autoplay.';
-            autoplayTimeout: '.$autoplayTimeout.';
-            nav            :'.$nav.',
-            dots           : '.$dots.',
-            navText        : ["<i class=\'fas fa-angle-left\'></i>", "<i class=\'fas fa-angle-right\'></i>"]
-        });
-      });
-   </script>
-   <div class="slider-active owl-carousel">';
+   if ($count == 1) {
+      $q = new WP_Query(
+         array(
+            'posts_per_page' => $count, 
+            'post_type'      => 'slides',
+            'p'              => $slider_id
+         )
+      );
+   } else {
+      $q = new WP_Query(
+         array(
+            'posts_per_page' => $count, 
+            'post_type'      => 'slides',
+         )
+      );
+   }
+   
+   if ($count == 1) {
+      $list ='';
+   } else {
+      $list = '
+      <script>
+         jQuery(window).load(function($){
+            jQuery(".slider-active").owlCarousel({
+               loop           : '.$loop.',
+               items          : 1,
+               autoplay       : '.$autoplay.';
+               autoplayTimeout: '.$autoplayTimeout.';
+               nav            :'.$nav.',
+               dots           : '.$dots.',
+               navText        : ["<i class=\'fas fa-angle-left\'></i>", "<i class=\'fas fa-angle-right\'></i>"]
+            });
+         });
+      </script>';
+   }
+   
+   
+   $list .='
+   <div class="slider-active">';
       while($q->have_posts()) : $q->the_post();
          $idd = get_the_ID();
          
@@ -60,7 +79,7 @@ function stock_slides_shortcode($atts){
 
          $post_content = get_the_content();
          $list .= '
-         <div style="background-image: url('.get_the_post_thumbnail_url($idd, 'large').')" class="stock_slide_item">';
+         <div style="background-image: url('.get_the_post_thumbnail_url($idd, 'large').'); height: '.$height.'px" class="stock_slide_item">';
          if ($enable_overlay == true) {
             $list .= '<div style="opacity: '.$overlay_percentage.'; background-color: '.$overlay_color.'" class="slide-overlay"></div>';
          }

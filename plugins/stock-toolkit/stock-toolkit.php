@@ -26,6 +26,23 @@ if( !defined('ABSPATH' ) ){
 define('STOCK_ACC_URL', WP_PLUGIN_URL.'/'. plugin_basename( dirname( __FILE__ ) ) . '/' );
 define('STOCK_ACC_PATH', plugin_dir_path( __FILE__ ) );
 
+function stock_toolkit_get_slide_as_list(){
+    $args = wp_parse_args(array(
+        'post_type' => 'slides', 
+        'numberposts' => -1, 
+    ));
+
+    $posts = get_posts($args);
+
+    $posts_options = array(esc_html__('Select Slide', 'stock') => '');
+    if($posts){
+        foreach ($posts as $post) {
+            $posts_options[ $post->post_title ] = $post->ID;
+        }
+    }
+    return $posts_options;
+}
+
 add_action( 'init', 'stock_slider_custom_post' );
 function stock_slider_custom_post() {
     register_post_type( 'slides',
