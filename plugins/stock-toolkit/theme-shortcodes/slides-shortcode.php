@@ -1,12 +1,17 @@
 <?php
 function stock_slides_shortcode($atts){
    extract( shortcode_atts( array(
-       'count' => '',
+       'count'             => 5,
+       'loop'              => 'true',
+       'autoplay'          => 'true',
+       'autoplayTimeout'   => 5000,
+       'nav'               => 'true',
+       'dots'              => 'true',
    ), $atts) );
     
    $q = new WP_Query(
       array(
-         'posts_per_page' => -1, 
+         'posts_per_page' => $count, 
          'post_type'      => 'slides',
       )
    );
@@ -15,21 +20,51 @@ function stock_slides_shortcode($atts){
    <script>
       jQuery(window).load(function($){
          jQuery(".slider-active").owlCarousel({
-            loop: true,
-            items:1,
-            nav:true,
-            dots: true,
-            navText: ["<i class=\'fas fa-angle-left\'></i>", "<i class=\'fas fa-angle-right\'></i>"]
+            loop           : '.$loop.',
+            items          : 1,
+            autoplay       : '.$autoplay.';
+            autoplayTimeout: '.$autoplayTimeout.';
+            nav            :'.$nav.',
+            dots           : '.$dots.',
+            navText        : ["<i class=\'fas fa-angle-left\'></i>", "<i class=\'fas fa-angle-right\'></i>"]
         });
       });
    </script>
    <div class="slider-active owl-carousel">';
       while($q->have_posts()) : $q->the_post();
          $idd = get_the_ID();
-         $slide_meta = get_post_meta($idd, 'stock_slides_options', true);
+         
+         if (get_post_meta($idd, 'stock_slides_options', true)) {
+            $slide_meta = get_post_meta($idd, 'stock_slides_options', true);
+         } else {
+            $slide_meta = array();
+         }
+         
+         if (array_key_exists('enable_overlay', $slide_meta)) {
+            $enable_overlay = $slide_meta['enable_overlay'];
+         }else {
+            $enable_overlay = true;
+         }
+
+         if (array_key_exists('overlay_percentage', $slide_meta)) {
+            $overlay_percentage = $slide_meta['overlay_percentage'];
+         }else {
+            $overlay_percentage = .7;
+         }
+
+         if (array_key_exists('overlay_color', $slide_meta)) {
+            $overlay_color = $slide_meta['overlay_color'];
+         }else {
+            $overlay_color = '#181a1f';
+         }
+
          $post_content = get_the_content();
          $list .= '
-         <div style="background-image: url('.get_the_post_thumbnail_url($idd, 'large').')" class="stock_slide_item">
+         <div style="background-image: url('.get_the_post_thumbnail_url($idd, 'large').')" class="stock_slide_item">';
+         if ($enable_overlay == true) {
+            $list .= '<div style="opacity: '.$overlay_percentage.'; background-color: '.$overlay_color.'" class="slide-overlay"></div>';
+         }
+         $list .= '
             <div class="stock_slide_table">
                <div class="stock_slide_tablecell">
                   <div class="container">
@@ -55,8 +90,7 @@ function stock_slides_shortcode($atts){
                   </div>
                </div>
             </div>
-         </div>
-         ';        
+         </div>';        
       endwhile;
    $list.= '</div>';
    wp_reset_query();

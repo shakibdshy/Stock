@@ -84,9 +84,9 @@ if( class_exists( 'CSF' ) ) {
          array(
             'id'        => 'overlay_percentage',
             'type'      => 'text',
-            'default'   => '70',
+            'default'   => '.7',
             'title'     => esc_html__('Overlay Percentage', 'stock'),
-            'desc'      => esc_html__('Type Overlay Percentage in Number', 'stock'),
+            'desc'      => esc_html__('Type Overlay Percentage in Floting Number. Max Value Is 1.', 'stock'),
             'dependency'   => array( 'enable_overlay', '==', true ),
          ),
          array(
