@@ -66,6 +66,7 @@ require_once( STOCK_ACC_PATH . 'vc-addons/vc-block-load.php');
 
 // Theme Shortchodes
 require_once( STOCK_ACC_PATH . 'theme-shortcodes/slides-shortcode.php');
+require_once( STOCK_ACC_PATH . 'theme-shortcodes/logo-shortcode.php');
 
 // ShortCodes Depended on Visual Composer
 include_once( ABSPATH . 'wp-admin/includes/plugin.php');
