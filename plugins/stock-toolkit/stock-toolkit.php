@@ -80,5 +80,6 @@ function stock_tolkit_files(){
    wp_enqueue_style('owl-carousel', plugin_dir_url( __FILE__ ) .'assets/css/owl.carousel.min.css');
    wp_enqueue_style('plugin-style', plugin_dir_url( __FILE__ ) .'assets/css/style.css');
    wp_enqueue_script('owl-carousel', plugin_dir_url( __FILE__ ) .'assets/js/owl.carousel.min.js', array('jquery'), '2.3.4', true);
+   wp_enqueue_script('plugin-js', plugin_dir_url( __FILE__ ) .'assets/js/active.js', array('jquery'), '2.3.4', true);
 }
 add_action('wp_enqueue_scripts','stock_tolkit_files');

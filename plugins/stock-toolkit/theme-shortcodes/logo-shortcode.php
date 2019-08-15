@@ -20,9 +20,10 @@ function stock_logo_carousel_shortcode($atts, $content = null){
       jQuery(document).ready(function($){
          $(".logo_carousel_active").owlCarousel({
             loop           : '.$loop.',
+            margin         : 30,
             items          : 5,
-            autoplay       : '.$autoplay.';
-            autoplaytimeout: '.$autoplaytimeout.';
+            autoplay       : '.$autoplay.',
+            autoplaytimeout: '.$autoplaytimeout.',
             nav            :'.$nav.',
             dots           : '.$dots.',
             navText        : ["<i class=\'fas fa-angle-left\'></i>", "<i class=\'fas fa-angle-right\'></i>"]
@@ -31,7 +32,7 @@ function stock_logo_carousel_shortcode($atts, $content = null){
    </script>
    ';
   $stock_logo_carousel_markup .= '
-  <div class="logo_carousel_active">';
+  <div class="logo_carousel_active owl-carousel">';
   foreach ($logo_ids as $logo) {
    $logo_array = wp_get_attachment_image_src($logo, 'large');
    $stock_logo_carousel_markup .= '

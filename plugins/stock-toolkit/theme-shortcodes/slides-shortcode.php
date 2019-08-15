@@ -6,7 +6,7 @@ function stock_slides_shortcode($atts){
        'height'            => '730',
        'loop'              => 'true',
        'autoplay'          => 'true',
-       'autoplayTimeout'   => 5000,
+       'autoplaytimeout'   => 5000,
        'nav'               => 'true',
        'dots'              => 'true',
    ), $atts) );
@@ -33,23 +33,23 @@ function stock_slides_shortcode($atts){
    } else {
       $list = '
       <script>
-         jQuery(window).load(function($){
-            jQuery(".slider-active").owlCarousel({
-               loop           : '.$loop.',
-               items          : 1,
-               autoplay       : '.$autoplay.';
-               autoplayTimeout: '.$autoplayTimeout.';
-               nav            :'.$nav.',
-               dots           : '.$dots.',
-               navText        : ["<i class=\'fas fa-angle-left\'></i>", "<i class=\'fas fa-angle-right\'></i>"]
-            });
+      jQuery(document).ready(function($){
+         $(".slider-active").owlCarousel({
+            loop           : '.$loop.',
+            items          : 1,
+            autoplay       : '.$autoplay.',
+            autoplayTimeout: '.$autoplaytimeout.',
+            nav            :'.$nav.',
+            dots           : '.$dots.',
+            navText        : ["<i class=\'fas fa-angle-left\'></i>", "<i class=\'fas fa-angle-right\'></i>"]
          });
+      });
       </script>';
    }
    
    
    $list .='
-   <div class="slider-active">';
+   <div class="slider-active owl-carousel">';
       while($q->have_posts()) : $q->the_post();
          $idd = get_the_ID();
          
