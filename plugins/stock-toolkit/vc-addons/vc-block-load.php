@@ -18,6 +18,7 @@ class stockVCExtendClass{
       include STOCK_ACC_PATH .'/vc-addons/vc-slides.php';
       include STOCK_ACC_PATH .'/vc-addons/vc-logo-carousel.php';
       include STOCK_ACC_PATH .'/vc-addons/vc-service.php';
+      include STOCK_ACC_PATH .'/vc-addons/vc-cta.php';
    }
 
    //Show Visual Composer version
