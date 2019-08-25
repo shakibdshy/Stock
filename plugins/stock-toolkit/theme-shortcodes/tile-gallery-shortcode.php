@@ -6,12 +6,7 @@ function stock_tile_gallery_shortcode($atts, $content = null){
       'height'             => 310,
       'custom_design'      => '',
       'size'               => 'large',
-      'type'               => 1,
-      'top'                => '',
-      'bottom'             => '',
-      'left'               => '',
-      'right'              => '',
-      'center'             => '',
+      'type'               => 'center',
 
   ), $atts) );
 
@@ -20,25 +15,13 @@ function stock_tile_gallery_shortcode($atts, $content = null){
   $image_no = 0;
   $custom_design = vc_shortcode_custom_css_class( $custom_design, ' ' );
 
-  if ($type == 1) {
-      $position = $center;
-   } elseif($type == 2) {
-      $position = $top;
-   } elseif($type == 3) {
-      $position = $bottom;
-   } elseif($type == 4) {
-      $position = $left;
-   } else {
-      $position = $right;
-   }
-
   if (!empty($images)) {
    $stock_tile_gallery_markup .= '
    <div class="'.$custom_design.' stock-tile-gallery stock-tile-gallery-image-'.$image_count.'">';
       foreach ($image_ids as $image) {
          $image_array = wp_get_attachment_image_src($image, $size);
          $image_no++;
-         $stock_tile_gallery_markup .= '<div style="background-image: url('.$image_array[0].'); height:'.$height.'px; background-position: '.$position.'; background-size: cover;" class="tile-gallery-block tile-gallery-block-'.$image_no.'"></div>';
+         $stock_tile_gallery_markup .= '<div style="background-image: url('.$image_array[0].'); height:'.$height.'px; background-position: '.$type.'; background-size: cover;" class="tile-gallery-block tile-gallery-block-'.$image_no.'"></div>';
       }
 
       $stock_tile_gallery_markup .= '

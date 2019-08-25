@@ -21,66 +21,19 @@ vc_map(
          array(
             "type" => "dropdown",
             "heading" => esc_html__( "Background Position", "stock" ),
-            "param_name" => "type",
-            "std" => esc_html__( "1", "stock" ),
+            "param_name" => 'type',
+            "std" => esc_html__( "center", "stock" ),
             "value" => array(
-               'Center' => 1, 
-               'Top'    => 2, 
-               'Bottom' => 3, 
-               'Left'   => 4, 
-               'Right'  => 5, 
+               'Center' => 'center', 
+               'Top'    => 'top', 
+               'Bottom' => 'bottom', 
+               'Left'   => 'left', 
+               'Right'  => 'right', 
             ),
-            "description" => esc_html__( "", "stock" )
-         ),
-         array(
-            "type" => "dropdown",
-            "heading" => esc_html__( "Center", "stock" ),
-            "param_name" => "center",
             "description" => esc_html__( "", "stock" ),
             'dependency'   => array( 
-               'element'   => 'type', 
-               'value'     => array("1"),
-            )
-         ),
-         array(
-            "type" => "dropdown",
-            "heading" => esc_html__( "Top", "stock" ),
-            "param_name" => "top",
-            "description" => esc_html__( "", "stock" ),
-            'dependency'   => array( 
-               'element'   => 'type', 
-               'value'     => array("2"),
-            )
-         ),
-         array(
-            "type" => "dropdown",
-            "heading" => esc_html__( "Bottom", "stock" ),
-            "param_name" => "bottom",
-            "description" => esc_html__( "", "stock" ),
-            'dependency'   => array( 
-               'element'   => 'type', 
-               'value'     => array("3"),
-            )
-         ),
-         array(
-            "type" => "dropdown",
-            "heading" => esc_html__( "Left", "stock" ),
-            "param_name" => "left",
-            "description" => esc_html__( "", "stock" ),
-            'dependency'   => array( 
-               'element'   => 'type', 
-               'value'     => array("4"),
-            )
-         ),
-         array(
-            "type" => "dropdown",
-            "heading" => esc_html__( "Right", "stock" ),
-            "param_name" => "right",
-            "description" => esc_html__( "", "stock" ),
-            'dependency'   => array( 
-               'element'   => 'type', 
-               'value'     => array("5"),
-            )
+               'value'     => array("center","top","bottom","left","right","7","8","9","10")
+            ),
          ),
          array(
 				'type' => 'css_editor',
