@@ -89,6 +89,8 @@ require_once( STOCK_ACC_PATH . 'theme-shortcodes/cta-shortcode.php');
 require_once( STOCK_ACC_PATH . 'theme-shortcodes/start-shortcode.php');
 require_once( STOCK_ACC_PATH . 'theme-shortcodes/stock-btn-shortcode.php');
 require_once( STOCK_ACC_PATH . 'theme-shortcodes/testimonial-shortcode.php');
+require_once( STOCK_ACC_PATH . 'theme-shortcodes/tile-gallery-shortcode.php');
+require_once( STOCK_ACC_PATH . 'theme-shortcodes/stock-video-shortcode.php');
 
 // ShortCodes Depended on Visual Composer
 include_once( ABSPATH . 'wp-admin/includes/plugin.php');
@@ -100,6 +102,8 @@ if( is_plugin_active( 'js_composer/js_composer.php' )){
    require_once( STOCK_ACC_PATH . 'theme-shortcodes/start-shortcode.php');
    require_once( STOCK_ACC_PATH . 'theme-shortcodes/stock-btn-shortcode.php');
    require_once( STOCK_ACC_PATH . 'theme-shortcodes/testimonial-shortcode.php');
+   require_once( STOCK_ACC_PATH . 'theme-shortcodes/tile-gallery-shortcode.php');
+   require_once( STOCK_ACC_PATH . 'theme-shortcodes/stock-video-shortcode.php');
 }
 
 
