@@ -22,16 +22,26 @@ if( class_exists( 'CSF' ) ) {
       
       // A text field
       array(
-        'id'        => 'enable-title',
+        'id'        => 'enable_title',
         'type'      => 'switcher',
         'title'     => esc_html__('Enable Title', 'stock'),
         'default'   => true,
         'desc'      => esc_html__('If you enable title ? Select Yes......', 'stock'),
       ),
+      array(
+        'id'        => 'custom_title',
+        'type'      => 'text',
+        'title'     => esc_html__('Custom Title', 'stock'),
+        'default'   => true,
+        'desc'      => esc_html__('If you want to custom title ?', 'stock'),
+          'dependency'  => array('enable_title','==','true'),
+      ),
 
     )
    ));
  
+
+
    //
    // Create a section
    CSF::createSection( $prefix, array(
@@ -40,9 +50,11 @@ if( class_exists( 'CSF' ) ) {
  
        // A textarea field
        array(
-         'id'    => 'opt-textarea',
-         'type'  => 'textarea',
-         'title' => 'Simple Textarea',
+         'id'       => 'enable_title',
+         'type'     => 'switcher',
+         'title'    => esc_html__('Enable title', 'stock'),
+         'default'  => true,
+         'desc'     => esc_html__('If you want to enable title, select yes.', 'stock'),
        ),
  
      )
