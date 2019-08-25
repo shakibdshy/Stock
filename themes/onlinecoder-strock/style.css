@@ -190,3 +190,24 @@ Footer Area
   color: #fff;
   padding-left: 15px;
 }
+
+.stock-breadcrumb-area {
+  font-size: 20px;
+  text-align: center;
+  background: #278cc1;
+  padding: 75px 0;
+  font-weight: 300;
+}
+.stock-breadcrumb-area, .stock-breadcrumb-area a {
+  color: #fff;
+  text-decoration: none;
+}
+.stock-breadcrumb-area span[typeof="ListItem"] {
+  display: inline-block;
+  padding: 0 10px;
+}
+.stock-breadcrumb-area h1 {
+	color: #fff;
+	font-size: 40px;
+	font-weight: ;
+}

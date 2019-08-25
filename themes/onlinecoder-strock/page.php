@@ -34,14 +34,14 @@ while ( have_posts() ) : the_post();
 	}
 ?>
 	<?php if($enable_title == true) : ?>
-	<div class="stock-breadcrumb-area">
+	<div <?php if(has_post_thumbnail()) : ?>style="background-image: url(<?php the_post_thumbnail_url('large')?>)"<?php endif; ?> class="stock-breadcrumb-area">
 		<div class="container">
 			<div class="row">
 				<div class="col-xl-12">
-				<h1 class="entry-title">
+				<h1>
 					<?php if (!empty($custom_title)) { echo $custom_title; } else { the_title(); } ?>
 				</h1>
-				<?php if(function_exists('bnc_display')) bnc_display(); ?>
+				<?php if(function_exists('bcn_display')) bcn_display(); ?>
 				</div>
 			</div>
 		</div>
