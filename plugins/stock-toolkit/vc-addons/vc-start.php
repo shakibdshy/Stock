@@ -23,6 +23,12 @@ vc_map(
             "param_name" => "desc",
             "description" => esc_html__( "", "stock" )
          ),
+         array(
+				'type' => 'css_editor',
+				'heading' => esc_html__( 'Css', 'stock' ),
+				'param_name' => 'custom_design',
+				'group' => esc_html__( 'Design options', 'stock' ),
+			)
       )
    ) 
 );

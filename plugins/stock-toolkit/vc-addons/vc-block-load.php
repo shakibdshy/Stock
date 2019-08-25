@@ -21,6 +21,7 @@ class stockVCExtendClass{
       include STOCK_ACC_PATH .'/vc-addons/vc-cta.php';
       include STOCK_ACC_PATH .'/vc-addons/vc-start.php';
       include STOCK_ACC_PATH .'/vc-addons/vc-stock-btn.php';
+      include STOCK_ACC_PATH .'/vc-addons/vc-testimonial.php';
    }
 
    //Show Visual Composer version
