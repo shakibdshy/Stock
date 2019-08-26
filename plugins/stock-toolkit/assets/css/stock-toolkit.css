@@ -106,3 +106,37 @@
 .bordered-btn:hover::after{
    width: 80%;
 }
+
+.vc_wp_custommenu ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.vc_wp_custommenu li a {
+  display: block;
+  border: 1px solid #f1f5f7;
+  color: #333;
+  font-size: 16px;
+  font-weight: 700;
+  padding: 15px;
+  margin-bottom: 3px;
+  position: relative;
+  text-decoration: none;
+  transition: .3s;
+}
+.vc_wp_custommenu li a:before {
+  position: absolute;
+  content: '';
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 100%;
+  background: #278cc1;
+  transition: .3s;
+}
+.vc_wp_custommenu li:hover a::before {
+  width: 5px;
+}
+.vc_wp_custommenu li:hover > a {
+  background: #edf4f7;
+}

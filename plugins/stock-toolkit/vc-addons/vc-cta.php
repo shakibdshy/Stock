@@ -79,17 +79,6 @@ vc_map(
             ),
             "description" => esc_html__( "", "stock" )
          ),
-         array(
-            "type" => "dropdown",
-            "heading" => esc_html__( "Theme", "stock" ),
-            "param_name" => "theme",
-            "std" => esc_html__( "1", "stock" ),
-            "value" => array(
-               'General Theme' => 1, 
-               'Colored Theme' => 2,
-            ),
-            "description" => esc_html__( "", "stock" )
-         ),
       )
    ) 
 );
