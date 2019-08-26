@@ -19,6 +19,17 @@ vc_map(
          ),
          array(
             "type" => "dropdown",
+            "heading" => esc_html__( "Theme", "stock" ),
+            "param_name" => "theme",
+            "std" => esc_html__( "1", "stock" ),
+            "value" => array(
+               'General Theme' => 1, 
+               'Colored Theme' => 2,
+            ),
+            "description" => esc_html__( "", "stock" )
+         ),
+         array(
+            "type" => "dropdown",
             "heading" => esc_html__( "Link type", "stock" ),
             "param_name" => "type",
             "std" => esc_html__( "1", "stock" ),
@@ -65,6 +76,17 @@ vc_map(
                'Left' => 'left', 
                'Center' => 'center', 
                'Right' => 'right',
+            ),
+            "description" => esc_html__( "", "stock" )
+         ),
+         array(
+            "type" => "dropdown",
+            "heading" => esc_html__( "Theme", "stock" ),
+            "param_name" => "theme",
+            "std" => esc_html__( "1", "stock" ),
+            "value" => array(
+               'General Theme' => 1, 
+               'Colored Theme' => 2,
             ),
             "description" => esc_html__( "", "stock" )
          ),

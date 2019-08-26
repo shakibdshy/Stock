@@ -8,6 +8,7 @@ function stock_cta_shortcode($atts, $content = null){
       'link_to_page'       => '',
       'external_link'      => '',
       'link_text'          => 'See more',
+      'theme'               => 1,
       'text_align'         => 'center',
   ), $atts) );
 
@@ -19,7 +20,7 @@ function stock_cta_shortcode($atts, $content = null){
   }
 
   $stock_cta_markup = '
-   <div class="stock-cta-box" style="text-align:'.$text_align.'">
+   <div class="stock-cta-box stock-cta-box-theme-'.$theme.'" style="text-align:'.$text_align.'">
    <h3>'.$title.'</h3>
    '.wpautop($desc).'
    <a href="'.$link_sourse.'" class="service-more-btn">'.$link_text.'</a>
