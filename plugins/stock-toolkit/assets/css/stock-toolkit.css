@@ -140,3 +140,29 @@
 .vc_wp_custommenu li:hover > a {
   background: #edf4f7;
 }
+
+.stock-cta-box-theme-2 {
+   background: #278cc1;
+   color: #fff;
+   font-size: 14px;
+   padding: 20px;
+ }
+ .stock-cta-box-theme-2 h3 {
+   color: #fff;
+   font-size: 20px;
+ }
+ .stock-cta-box-theme-2 .border-btn {
+   background: #fff;
+   color: #333;
+   display: inline-block;
+   font-size: 15px;
+   font-weight: 700;
+   padding: 5px 20px;
+   text-decoration: none;
+   margin-top: 20px;
+   text-transform: uppercase;
+
+ }
+ .stock-cta-box-theme-2 .border-btn:after {
+   display: none;
+ }

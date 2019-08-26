@@ -23,7 +23,7 @@ function stock_cta_shortcode($atts, $content = null){
    <div class="stock-cta-box stock-cta-box-theme-'.$theme.'" style="text-align:'.$text_align.'">
    <h3>'.$title.'</h3>
    '.wpautop($desc).'
-   <a href="'.$link_sourse.'" class="service-more-btn">'.$link_text.'</a>
+   <a href="'.$link_sourse.'" class="border-btn">'.$link_text.'</a>
 
   ';
   return $stock_cta_markup;
