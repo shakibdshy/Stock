@@ -73,7 +73,36 @@ function stock_slider_custom_post() {
             'show_ui'   => true,
         )
     );
+    register_post_type( 'project',
+        array(
+            'labels' => array(
+                'name' => __( 'Project' ),
+                'singular_name' => __( 'Project' )
+            ),
+            'supports' => array('title', 'editor', 'thumbnail', 'page-attributes'),
+            'public'    => false,
+            'show_ui'   => true,
+        )
+    );
 }
+
+function stock_toolkit_custom_post_texonomy(){
+    register_taxonomy(
+        'project_cat',
+        'project',
+        array(
+            'hierarchical'      => true,
+            'label'             => 'Project Category',
+            'query_var'         => true,
+            'show_admin_colum'  => true,
+            'rewrite'           => array(
+                'slug'          => 'project-category',
+                'with_front'    => true,
+            )
+        )
+    );
+}
+add_action('init','stock_toolkit_custom_post_texonomy');
 
 // Print Shortcode In Widget
 add_filter('widget_text', 'do_shortcode');
