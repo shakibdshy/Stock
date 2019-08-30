@@ -234,3 +234,18 @@ a.single-work-box {
    opacity: .5;
    visibility: visible;
  }
+ 
+.stock-project-shorting-2 {
+   margin-bottom: 50px;
+   margin-left: 0;
+   padding: 0;
+   list-style: none;
+   cursor: pointer;
+ }
+ .stock-project-shorting-2 li {
+   display: inline-block;
+   padding-right: 20px;
+ }
+ .stock-project-shorting-2 li.active {
+   color: #278cc1;
+ }
