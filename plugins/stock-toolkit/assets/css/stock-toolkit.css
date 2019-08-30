@@ -127,6 +127,9 @@ a{
   text-decoration: none;
   transition: .3s;
 }
+ul.stock-project-shorting li{
+   cursor: pointer;
+}
 .vc_wp_custommenu li a:before, ul.stock-project-shorting li::before {
   position: absolute;
   content: '';
@@ -137,11 +140,12 @@ a{
   background: #278cc1;
   transition: .3s;
 }
-.vc_wp_custommenu li:hover a::before, ul.stock-project-shorting li:hover::before {
+.vc_wp_custommenu li:hover a::before, ul.stock-project-shorting li:hover::before, ul.stock-project-shorting li.active:before {
   width: 5px;
 }
-.vc_wp_custommenu li:hover > a, ul.stock-project-shorting li:hover {
+.vc_wp_custommenu li:hover > a, ul.stock-project-shorting li:hover, ul.stock-project-shorting li.active {
   background: #edf4f7;
+  text-decoration: none;
 }
 
 .stock-cta-box-theme-2 {
