@@ -117,6 +117,15 @@ function onlinecoder_strock_widgets_init() {
 		'after_title'   => '</h2>',
 	) );
 	register_sidebar( array(
+		'name'          => esc_html__( 'Project Sidebar', 'onlinecoder-strock' ),
+		'id'            => 'stock_project_sidebar',
+		'description'   => esc_html__( 'Add project sidebar widgets here.', 'onlinecoder-strock' ),
+		'before_widget' => '<div id="%1$s" class="widget footer-menu %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h4 class="widget-title">',
+		'after_title'   => '</h4>',
+	) );
+	register_sidebar( array(
 		'name'          => esc_html__( 'Footer Menu', 'onlinecoder-strock' ),
 		'id'            => 'stock_footer',
 		'description'   => esc_html__( 'Add Footer widgets here.', 'onlinecoder-strock' ),

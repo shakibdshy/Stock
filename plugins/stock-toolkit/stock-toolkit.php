@@ -80,8 +80,7 @@ function stock_slider_custom_post() {
                 'singular_name' => __( 'Project' )
             ),
             'supports' => array('title', 'editor', 'thumbnail', 'page-attributes'),
-            'public'    => false,
-            'show_ui'   => true,
+            'public'    => true,
         )
     );
 }
