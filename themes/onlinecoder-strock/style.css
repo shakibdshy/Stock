@@ -201,6 +201,10 @@ Footer Area
 .stock-breadcrumb-area, .stock-breadcrumb-area a {
   color: #fff;
   text-decoration: none;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
 }
 .stock-breadcrumb-area span[typeof="ListItem"] {
   display: inline-block;
