@@ -447,3 +447,80 @@ object {
  .widget.widget_rss li {
 	margin-bottom: 30px;
  }
+ .nav-links a {
+	font-size: 18px;
+	color: #333;
+	font-weight: 700;
+	text-decoration: none;
+	border: 1px solid #ddd;
+	padding: 15px 25px;
+	border-radius: 5px;
+	transition: .3s;
+	display: inline-block;
+	margin-bottom: 10px;
+}
+.nav-links a:hover {
+	background: #208bc3;
+	color: #fff;
+}
+
+.entry-content .page-links a {
+	text-decoration: none;
+	background: #208bc3;
+	padding: 5px 10px;
+	color: #ddd;
+	border-radius: 3px;
+	margin-left: 5px;
+ }
+ .entry-footer .cat-links a, .tags-links a {
+	text-decoration: none;
+	padding: 5px;
+}
+.post-thumbnail {
+	margin-top: 30px;
+}
+.entry-content table td {
+	padding: 10px 15px;
+	border: 1px solid #ddd;
+}
+
+.entry-content table th a {
+	padding-right: 10px;
+	color: #333;
+	font-weight: 700;
+	display: inline-block;
+	text-decoration: none;
+ }
+ .entry-content h2 {
+	padding: 10px 0;
+ }
+ .entry-content table th {
+	border: 1px solid #ddd;
+	padding: 10px 20px;
+ }
+ .entry-content dd {
+	margin-bottom: 15px;
+ }
+ .entry-content ul, .entry-content ol {
+	padding-left: 20px;
+ }
+ .entry-content address {
+	border: 1px solid #ddd;
+	padding: 10px;
+ }
+ 
+.entry-content h2 {
+	font-size: 2rem;
+ }
+ .entry-content h3 {
+	font-size: 1.75rem;
+ }
+ .entry-content h4 {
+	font-size: 1.5rem;
+ }
+ .entry-content h5 {
+	font-size: 1.25rem;
+ }
+ .entry-content h6 {
+	font-size: 1rem;
+ }
