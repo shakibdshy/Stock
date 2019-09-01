@@ -233,3 +233,6 @@ Footer Area
 .stock-internal-area h1 {
 	font-size: 40px;
 }
+.search-results article.page .entry-summary{
+  display: none;
+}
