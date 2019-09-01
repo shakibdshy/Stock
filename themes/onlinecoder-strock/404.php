@@ -10,23 +10,30 @@
 get_header();
 ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
-
-			<section class="error-404 not-found">
-				<header class="page-header">
+	<div <?php if(has_post_thumbnail()) : ?>style="background-image: url(<?php the_post_thumbnail_url('large')?>)"<?php endif; ?> class="stock-breadcrumb-area">
+		<div class="container">
+			<div class="row">
+				<div class="col-xl-12">
 					<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'onlinecoder-strock' ); ?></h1>
-				</header><!-- .page-header -->
+					<?php if(function_exists('bcn_display')) bcn_display(); ?>
+				</div>
+			</div>
+		</div>
+	</div>
 
-				<div class="page-content">
-					<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'onlinecoder-strock' ); ?></p>
+	<div class="stock-internal-area section-enable-padding">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4">
+				<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'onlinecoder-strock' ); ?></p>
 
 					<?php
 					get_search_form();
 
 					the_widget( 'WP_Widget_Recent_Posts' );
 					?>
-
+				</div>
+				<div class="col-md-4">
 					<div class="widget widget_categories">
 						<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'onlinecoder-strock' ); ?></h2>
 						<ul>
@@ -41,20 +48,20 @@ get_header();
 							?>
 						</ul>
 					</div><!-- .widget -->
-
+				</div>
+				<div class="col-md-4">
 					<?php
 					/* translators: %1$s: smiley */
-					$onlinecoder_strock_archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'onlinecoder-strock' ), convert_smilies( ':)' ) ) . '</p>';
-					the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$onlinecoder_strock_archive_content" );
+						$onlinecoder_strock_archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'onlinecoder-strock' ), convert_smilies( ':)' ) ) . '</p>';
+						the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$onlinecoder_strock_archive_content" );
 
-					the_widget( 'WP_Widget_Tag_Cloud' );
+						the_widget( 'WP_Widget_Tag_Cloud' );
 					?>
+				</div>
+			</div>
+		</div>
+	</div>
 
-				</div><!-- .page-content -->
-			</section><!-- .error-404 -->
-
-		</main><!-- #main -->
-	</div><!-- #primary -->
 
 <?php
 get_footer();
