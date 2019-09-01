@@ -41,6 +41,7 @@ if ( ! function_exists( 'onlinecoder_strock_setup' ) ) :
 		 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 		 */
 		add_theme_support( 'post-thumbnails' );
+		add_image_size('onlinecoder-strock-blog-thumnail', 750, 450, true);
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
