@@ -25,7 +25,15 @@ get_header();
 	<div class="stock-internal-area">
 		<div class="container">
 			<div class="row">
-				<div class="col-xl-8">
+				<?php if(get_post_type() == 'project' && is_active_sidebar('stock_project_sidebar')) : ?>
+				<div class="col-md-4">
+					<div class="project-widgets">
+						<?php dynamic_sidebar('stock_project_sidebar'); ?>
+					</div>
+				</div>
+				<?php endif;?>
+
+				<div class="<?php if(get_post_type() == 'project') : ?><?php if(is_active_sidebar('stock_project_sidebar')) : ?>col-xl-8<?php else : ?>col-md-10 col-md-offset-2<?php endif; ?><?php else : ?>col-xl-8<?php endif; ?>">
 				
 				<?php
 				while ( have_posts() ) :
@@ -43,7 +51,7 @@ get_header();
 				endwhile; // End of the loop.
 				?>
 				</div>
-				<?php get_sidebar(); ?>
+				<?php if(get_post_type() != 'project') {get_sidebar();} ?>
 			</div>
 		</div>
 	</div>
