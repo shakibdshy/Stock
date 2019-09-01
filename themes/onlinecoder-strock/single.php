@@ -8,6 +8,15 @@
  */
 
 get_header();
+
+$vc_check = get_post_meta($post->ID, '_wpb_vc_js_status', true);
+
+if ($vc_check == true) {
+	$vc_class = '';
+} else {
+	$vc_class = 'section-enable-padding';
+}
+
 ?>
 	<div <?php if(has_post_thumbnail()) : ?>style="background-image: url(<?php the_post_thumbnail_url('large')?>)"<?php endif; ?> class="stock-breadcrumb-area">
 		<div class="container">
@@ -16,13 +25,13 @@ get_header();
 				<h1>
 					<?php the_title(); ?>
 				</h1>
-				<?php if(function_exists('bcn_display')) bcn_display(); ?>
+				<?php if(function_exists('bcn_display') && get_post_type() != 'project') bcn_display(); ?>
 				</div>
 			</div>
 		</div>
 	</div>
 
-	<div class="stock-internal-area">
+	<div class="stock-internal-area <?php echo $vc_class; ?>">
 		<div class="container">
 			<div class="row">
 				<?php if(get_post_type() == 'project' && is_active_sidebar('stock_project_sidebar')) : ?>
@@ -41,7 +50,9 @@ get_header();
 
 					get_template_part( 'template-parts/content', get_post_type() );
 
-					the_post_navigation();
+					if (get_post_type() != 'project') {
+						the_post_navigation();
+					} 
 
 					// If comments are open or we have at least one comment, load up the comment template.
 					if ( comments_open() || get_comments_number() ) :
