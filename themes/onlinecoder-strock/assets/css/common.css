@@ -252,6 +252,7 @@ a:hover, a:active {
 .page-links {
 	clear: both;
 	margin: 0 0 1.5em;
+	margin-top: 35px;
 }
 
 /*--------------------------------------------------------------
@@ -523,4 +524,126 @@ object {
  }
  .entry-content h6 {
 	font-size: 1rem;
+ }
+ 
+.comments-area {
+	margin-top: 185px;
+ }
+ .comments-area .comments-title {
+	font-size: 25px;
+	margin-bottom: 25px;
+ }
+ .comment-list {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+ }
+ .comment-meta {
+	margin-bottom: 20px;
+ }
+ .comment-list a {
+	color: #333;
+ }
+ .comment-author.vcard {
+	position: relative;
+	padding-left: 50px;
+ }
+ .comment-author.vcard img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 50px;
+	height: 50px;
+ }
+ .comment-metadata {
+	margin-left: 65px;
+ }
+ .comment-author.vcard .fn a {
+	text-decoration: none;
+	margin-left: 17px;
+ }
+ .comments-area table {
+	border-left: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+	margin-bottom: 20px;
+ }
+ .comments-area table td, .comments-area table th {
+	border-right: 1px solid #ddd;
+	border-top: 1px solid #ddd;
+	padding: 10px;
+ }
+ .comments-area table td a {
+	text-decoration: none;
+	font-weight: 700;
+ }
+ .comments-area dd {
+	margin-bottom: 15px;
+ }
+ .comments-area .comment-content ul, .comments-area .comment-content ol {
+	padding-left: 15px;
+ }
+ .comment-reply-link {
+	display: inline-block;
+	background: #278cc0;
+	padding: 10px 25px;
+	border-radius: 3px;
+	color: #fff !important;
+	text-decoration: none !important;
+	margin-bottom: 20px;
+ }
+ .comment-list li.comment {
+	margin-bottom: 32px;
+	border-bottom: 1px solid #ddd;
+	padding-bottom: 30px;
+ }
+ .comment-reply-link a {
+	text-decoration: none;
+ }
+ .comment-list li ol.children {
+	list-style: none;
+	margin: 0;
+	margin-top: 25px;
+ }
+ .comment-list li ol.children ol.children {
+	padding-left: 30px;
+ }
+ .comment-list li.comment:last-child {
+	border-bottom: 0px solid;
+	padding-bottom: 0;
+	margin-bottom: 0;
+ }
+ .comment-respond {
+	margin-top: 50px;
+ }
+ .comment-form label {
+	display: block;
+	margin-bottom: 15px;
+	font-weight: 700;
+ }
+ .comment-form input, .comment-form textarea {
+	border: 1px solid #ddd;
+	margin-bottom: 20px;
+	border-radius: 4px;
+ }
+ .comment-form input {
+	width: 50%;
+	padding: 20px;
+ }
+ .comment-form-cookies-consent {
+	display: inline-block;
+ }
+ .comment-form-cookies-consent input {
+	width: 0;
+ }
+ .comment-form-cookies-consent label {
+	display: inline-block;
+	margin-left: 15px;
+ }
+ .comment-form input[type=submit] {
+	width: auto;
+	background: #278ccd;
+	color: #fff;
+	font-weight: 700;
+	text-transform: uppercase;
+	padding: 25px 35px;
  }
