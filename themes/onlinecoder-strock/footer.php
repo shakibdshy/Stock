@@ -10,6 +10,8 @@
  * @package Strock
  */
 
+ $stock_social_link = prefix_get_option('social_link');
+
 ?>
 
 <footer id="colophon" class="site-footer">
@@ -34,12 +36,13 @@
 							?>
 						</div>
 						<div class="col-xl-4">
+							<?php if(!empty($stock_social_link)) : ?>
 							<div class="social-icon">
-								<a href="#"><i class="fab fa-facebook"></i></a>
-								<a href="#"><i class="fab fa-twitter"></i></a>
-								<a href="#"><i class="fab fa-linkedin"></i></a>
-								<a href="#"><i class="fab fa-youtube"></i></a>
+								<?php foreach ($stock_social_link as $link) : ?>
+								<a href="<?php echo $link['link']; ?>" target="_blank"><i class="<?php echo $link['icon']; ?>"></i></a>
+								<?php endforeach; ?>
 							</div>
+							<?php endif; ?>
 						</div>
 					</div>
 				</div>

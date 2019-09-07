@@ -60,7 +60,7 @@ if( class_exists( 'CSF' ) ) {
 
 	// Social Link
 	CSF::createSection( $prefix, array(
-	  'name'  => 'stock_social_Link',
+	  'name'  => 'stock_social_link',
 	  'title'  => 'Social Link',
 	  'fields' => array(
 		 //
@@ -74,7 +74,7 @@ if( class_exists( 'CSF' ) ) {
 				array(
 					'id'    => 'icon',
 					'type'  => 'icon',
-					'title' => 'Icon'
+					'title' => 'Link Icon'
 				),
 				array(
 					'id'    => 'link',
