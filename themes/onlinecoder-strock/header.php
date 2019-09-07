@@ -19,7 +19,11 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 
-	<?php wp_head(); ?>
+	<?php
+	
+	$header_iconic_boxes = prefix_get_option('header_iconic_boxes');
+
+	wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
@@ -35,23 +39,21 @@
 
 					<div class="col-xl-9">
 						<div class="header-right-content">
-							<a href="mailto:contact@stock.com" class="stock-content-box">
-								<i class="fas fa-envelope"></i>
-								Send us an email
-								<h3>contact@stock.com</h3>
-							</a>
-							<div class="stock-content-box">
-								<i class="fas fa-phone"></i>
-								Give us a Call
-								<h3>+014-547-0354</h3>
-							</div>
-							<a href="mailto:contact@stock.com" class="stock-content-box">
-								<i class="fas fa-map-marker"></i>
-								Send us an email
-								<h3>contact@stock.com</h3>
-							</a>
+						<?php if(!empty($header_iconic_boxes)) : ?>
+							<?php foreach ($header_iconic_boxes as $box) : ?>
+							<?php if(!empty($box['link'])) : ?><a href="mailto:contact@stock.com"<?php else : ?><div <?php endif; ?>class="stock-content-box">
+							
+								<i class="<?php echo $box['icon']; ?>"></i>
+								<?php echo $box['title']; ?>
+								<h3><?php echo $box['big_title']; ?></h3>
+
+							<?php if(!empty($box['link'])) : ?></a><?php else : ?></div> <?php endif; ?>
+							<?php endforeach; ?>
+						<?php endif; ?>
+
 							<a href="#" class="stock-cart"><i class="fas fa-shopping-cart"></i><span class="stock-cart-count">3</span></a>
 						</div>
+						
 					</div>
 				</div>
 

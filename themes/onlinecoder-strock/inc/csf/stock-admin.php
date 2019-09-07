@@ -10,8 +10,10 @@ if( class_exists( 'CSF' ) ) {
 	//
 	// Create options
 	CSF::createOptions( $prefix, array(
-	  'menu_title' => 'Stock Theme',
-	  'menu_slug'  => 'stock-framework',
+		'framework_title' 	=> 'Stock',
+		'menu_title' 			=> 'Stock Theme',
+		'menu_slug'  			=> 'stock-framework',
+		'show_all_options' 	=> false,
 	) );
  
 	//
@@ -43,6 +45,12 @@ if( class_exists( 'CSF' ) ) {
 					'id'    => 'big_title',
 					'type'  => 'text',
 					'title' => 'Big title',
+				),
+				array(
+					'id'    	=> 'link',
+					'type'  	=> 'text',
+					'title' 	=> 'Box Link',
+					'desc' 	=> 'Leave blank if you do not want a link',
 				),
 			),
 		 ),
