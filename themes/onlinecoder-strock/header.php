@@ -22,6 +22,9 @@
 	<?php
 	
 	$header_iconic_boxes = prefix_get_option('header_iconic_boxes');
+	$enable_image_logo = prefix_get_option('enable_image_logo');
+	$image_logo = prefix_get_option('image_logo');
+	$text_logo = prefix_get_option('text_logo');
 
 	wp_head(); ?>
 </head>
@@ -33,7 +36,17 @@
 				<div class="row">
 					<div class="col-xl-3">
 						<div class="site-logo">
-							<h2><a href="<?php echo esc_url(home_url('/')) ?>"><?php bloginfo('name'); ?></a></h2>
+							<h2>
+								<a href="<?php echo esc_url(home_url('/')) ?>">
+
+									<?php if ($enable_image_logo == true && !empty($image_logo)) : $image_logo_src = wp_get_attachment_image_src($image_logo, 'large'); ?>
+										<img src="<?php echo $image_logo_src[0]; ?>" alt="<?php echo bloginfo('name'); ?>">
+									<?php else : ?>
+										<?php if (!empty($text_logo)) {echo $text_logo;} else {bloginfo('name'); } ?>
+									<?php endif; ?>
+
+								</a>
+							</h2>
 						</div>
 					</div>
 

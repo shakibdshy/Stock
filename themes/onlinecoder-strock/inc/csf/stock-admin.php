@@ -104,6 +104,7 @@ if( class_exists( 'CSF' ) ) {
 			'id'    			=> 'image_logo',
 			'type'  			=> 'media',
 			'title' 			=> 'Upload site logo',
+			'library' 		=> 'image',
 			'default' 		=> false,
 			'dependency' 	=> array('enable_image_logo','==','true')
 			),
