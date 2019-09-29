@@ -15,9 +15,9 @@ function stock_btn_shortcode($atts, $content = null){
   }
   
   $stock_btn_markup = '
-  <a href="'.$link_sourse.'" class="border-btn">'.$link_text.'</a>            
+  <a href="'.$link_sourse.'" class="border-btn">'.$link_text. '</a>            
   ';
 
-  return $stock_btn_markup;
+    return $stock_start_markup;
 }
-add_shortcode('stock_btn', 'stock_btn_shortcode');
+add_shortcode('stock_btn', 'stock_start_shortcode');
